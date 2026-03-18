@@ -169,7 +169,7 @@ const AboutPage = () => {
 
       {/* 4. Core Values */}
       <section className="mb-10 md:mb-[140px]">
-        <div className="container px-4 md:px-0">
+        <div className="container">
           <SectionHeading 
             badge="Core Values" 
             text="The principles that guide our work, our relationships, and our commitment to excellence."
@@ -248,7 +248,7 @@ const AboutPage = () => {
 
       {/* 6. Awards Section */}
       <section className="mb-10 md:mb-[140px]">
-        <div className="container px-4 md:px-0">
+        <div className="container">
           <SectionHeading 
             badge="Awards & Recognition" 
             text="Celebrating the milestones and industry accolades that validate our commitment to excellence."
