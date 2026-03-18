@@ -71,11 +71,11 @@ const ServicesPage = () => {
                 loading="lazy"
               />
             </div>
-            <div className="flex-1 space-y-8">
-              <h1 className="text-5xl md:text-[60px] font-medium leading-tight">
+            <div className="flex-1 space-y-8 text-center md:text-left">
+              <h1 className="text-4xl sm:text-5xl md:text-[60px] font-medium leading-tight">
                 Expert Digital Marketing Services
               </h1>
-              <p className="text-xl text-dark leading-relaxed max-w-xl">
+              <p className="text-lg sm:text-xl text-dark leading-relaxed max-w-xl mx-auto md:mx-0">
                 Boost your business with our data-driven marketing strategies tailored for success in the digital world.
               </p>
             </div>
@@ -167,15 +167,15 @@ const ServicesPage = () => {
       {/* Bottom CTA Section */}
       <section className="mt-[70px] mb-[140px]">
         <div className="container">
-          <div className="bg-white rounded-[45px] p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 border border-dark shadow-[0px_8px_0px_#191A23] relative overflow-hidden">
-            <div className="max-w-xl space-y-8 relative z-10">
+          <div className="bg-white rounded-[45px] p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 border border-dark shadow-[0px_8px_0px_#191A23] relative overflow-hidden">
+            <div className="max-w-xl space-y-8 relative z-10 text-center md:text-left">
               <h2 className="text-4xl md:text-5xl font-medium leading-tight text-dark">
                 Ready to Elevate Your Search Rankings?
               </h2>
               <p className="text-xl text-dark/70 leading-relaxed font-space">
                 Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.
               </p>
-              <button className="bg-primary text-dark px-10 py-5 rounded-2xl font-bold border-2 border-dark shadow-[0px_4px_0px_#191A23] hover:translate-y-[-2px] transition-all">
+              <button className="bg-primary text-dark px-10 py-5 rounded-2xl font-bold border-2 border-dark shadow-[0px_4px_0px_#191A23] hover:translate-y-[-2px] transition-all w-full md:w-auto">
                 Get Your Free Quote
               </button>
             </div>

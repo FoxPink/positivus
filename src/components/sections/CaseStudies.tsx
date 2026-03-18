@@ -23,12 +23,12 @@ const CaseStudies = () => {
       <div className="container">
         <div className="flex flex-col md:flex-row items-start gap-[40px] mb-20">
           <h2 className="section-title mb-0 h-[51px] flex flex-col items-start justify-center px-[7px]">Case Studies</h2>
-          <p className="max-w-[580px] md:h-[46px] font-normal text-[18px] leading-[23px] text-black">
+          <p className="max-w-[580px] font-normal text-[18px] leading-[23px] text-black">
             Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies
           </p>
         </div>
 
-        <div className="bg-dark text-white rounded-[45px] py-[70px] px-[60px] md:w-[1234px] md:min-h-[326px] mx-auto flex flex-col md:flex-row items-stretch gap-[64px] relative overflow-hidden">
+        <div className="bg-dark text-white rounded-[45px] py-10 md:py-[70px] px-8 md:px-[60px] w-full max-w-[1234px] mx-auto flex flex-col md:flex-row items-stretch gap-10 md:gap-[64px] relative overflow-hidden">
           {cases.map((item, index) => (
             <React.Fragment key={index}>
               <motion.div
