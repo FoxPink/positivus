@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+@layer base {
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply bg-white text-dark antialiased;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-medium transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-dark text-white hover:bg-opacity-90;
+  }
+  
+  .btn-secondary {
+    @apply bg-primary text-dark hover:bg-opacity-90;
+  }
+
+  .btn-outline {
+    @apply border border-dark text-dark hover:bg-dark hover:text-white;
+  }
+
+  .section-title {
+    @apply inline-block px-2 bg-primary rounded-md text-3xl font-medium mb-10;
+  }
+}
