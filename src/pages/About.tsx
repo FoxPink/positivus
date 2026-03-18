@@ -2,10 +2,6 @@ import { useEffect, useState, useRef } from 'react';
 import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
 import { Heart, Lightbulb, Users, Eye, Trophy } from 'lucide-react';
 import TogetherForSuccessImage from '../assets/TogetherForSuccess.png';
-import HeartIcon from '../assets/Illustration/heart.png';
-import PlayIcon from '../assets/Illustration/play.png';
-import ShareIcon from '../assets/Illustration/share.png';
-import LocationIcon from '../assets/Illustration/location.png';
 import CTAIllustration from '../assets/Illustration/Illustration.png';
 import GreenStar from '../assets/Services/GreenStar.png';
 
