@@ -55,6 +55,6 @@ html.lenis {
   }
 
   .section-title {
-    @apply inline-block px-2 bg-primary rounded-md text-3xl font-medium mb-10;
+    @apply inline-flex w-fit px-2 bg-primary rounded-md text-3xl font-medium mb-10;
   }
 }

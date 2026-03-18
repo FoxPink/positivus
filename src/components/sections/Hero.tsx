@@ -24,7 +24,7 @@ const logos = [
 
 const Hero = () => {
   return (
-    <section className="relative pt-[60px] md:pt-[100px] pb-10 md:pb-[70px] overflow-hidden flex flex-col items-start gap-[70px] max-w-[1440px] mx-auto min-h-[771px]">
+    <section className="relative pt-[100px] md:pt-[100px] pb-10 md:pb-[70px] overflow-hidden flex flex-col items-start gap-[70px] max-w-[1440px] mx-auto min-h-[771px]">
       <div className="container grid md:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -136,7 +136,7 @@ const Hero = () => {
 
             {/* Animated Location Icon - Top left position */}
             <motion.div
-              className="absolute min-w-[90px] sm:min-w-[70px] min-[1080px]:min-w-[100px] bottom-[37%] right-[4%] w-[10%] z-10"
+              className="absolute min-w-[60px] sm:min-w-[70px] min-[1080px]:min-w-[100px] bottom-[37%] right-[4%] w-[10%] z-10"
               initial={{ scale: 0, opacity: 0 }}
               animate={{ 
                 scale: 1,

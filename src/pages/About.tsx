@@ -48,9 +48,9 @@ const AboutPage = () => {
   const isJourneyInView = useInView(journeyRef, { once: true, margin: "-100px" });
 
   return (
-    <div className="pt-[100px] md:pt-[150px] pb-20">
+    <div className="pt-[100px] md:pt-[150px] pb-0">
       {/* 1. Hero Section */}
-      <section className="mb-[140px]">
+      <section className="mb-[80px] md:mb-[140px]">
         <div className="container">
           <div className="bg-grey rounded-[45px] p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 overflow-hidden">
             <div className="flex-1 space-y-8">
@@ -77,7 +77,7 @@ const AboutPage = () => {
       </section>
 
       {/* 2. Impact in Numbers */}
-      <section className="mb-[140px]">
+      <section className="mb-[80px] md:mb-[140px]">
         <div className="container">
           <SectionHeading 
             badge="Our Impact in Numbers" 
@@ -91,7 +91,10 @@ const AboutPage = () => {
               { value: 20, suffix: "+", label: "Awards Won" },
               { value: 500, suffix: "%", label: "ROI for Clients" }
             ].map((stat, i) => (
-              <div key={i} className="flex flex-col items-center">
+              <div
+                key={i}
+                className={`flex flex-col items-center ${i === 4 ? 'col-span-2 justify-self-center md:col-span-1 md:justify-self-auto' : ''}`}
+              >
                 <div className="text-4xl md:text-5xl font-bold text-dark mb-2">
                   <Counter value={stat.value} suffix={stat.suffix} />
                 </div>
@@ -105,7 +108,7 @@ const AboutPage = () => {
       </section>
 
       {/* 3. Our Journey (Timeline) */}
-      <section className="mb-[140px]">
+      <section className="mb-[80px] md:mb-[140px]">
         <div className="container">
           <SectionHeading 
             badge="Our Journey" 
@@ -168,7 +171,7 @@ const AboutPage = () => {
       </section>
 
       {/* 4. Core Values */}
-      <section className="mb-[140px]">
+      <section className="mb-[80px] md:mb-[140px]">
         <div className="container">
           <SectionHeading 
             badge="Core Values" 
@@ -196,7 +199,7 @@ const AboutPage = () => {
       </section>
 
       {/* 5. Quote Section */}
-      <section className="mb-[140px]">
+      <section className="mb-[80px] md:mb-[140px]">
         <div className="container">
           <div className="bg-dark rounded-[45px] p-12 md:p-24 relative overflow-hidden">
             <div className="relative z-10 max-w-4xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center gap-12">
@@ -227,7 +230,7 @@ const AboutPage = () => {
       </section>
 
       {/* 6. Awards Section */}
-      <section className="mb-[140px]">
+      <section className="mb-[80px] md:mb-[140px]">
         <div className="container">
           <SectionHeading 
             badge="Awards & Recognition" 
@@ -252,7 +255,7 @@ const AboutPage = () => {
       </section>
 
       {/* 7. CTA Section */}
-      <section className="mb-[140px]">
+      <section className="mb-0">
         <div className="container">
           <div className="bg-primary rounded-[45px] p-12 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="max-w-xl space-y-8 relative z-10">
@@ -279,4 +282,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-
