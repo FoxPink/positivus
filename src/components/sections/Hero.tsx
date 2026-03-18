@@ -52,7 +52,7 @@ const Hero = () => {
           <div className="relative w-full max-w-[800px]">
             <img src={Illustration} alt="Positivus Illustration" className="w-full h-auto" />
             
-            {/* Animated Heart Icon - Điều chỉnh vị trí khớp với bản vẽ */}
+            {/* Animated Heart Icon - Adjust position to match design */}
             <motion.div
               className="absolute min-w-[40px] sm:min-w-[65px] min-[1080px]:min-w-[90px] top-[0%] right-[16%] w-[12%] z-10"
               initial={{ scale: 0, opacity: 0 }}
@@ -75,7 +75,7 @@ const Hero = () => {
               <img src={HeartIcon} alt="Floating Heart" className="w-full h-auto drop-shadow-md" />
             </motion.div>
 
-            {/* Animated Share Icon - Điều chỉnh vị trí khớp với bản vẽ */}
+            {/* Animated Share Icon - Adjust position to match design */}
             <motion.div
               className="absolute min-w-[40px] sm:min-w-[65px] min-[1080px]:min-w-[90px] top-[2%] right-[0%] w-[12%] z-10"
               initial={{ scale: 0, opacity: 0 }}
@@ -105,7 +105,7 @@ const Hero = () => {
               <img src={ShareIcon} alt="Floating Share" className="w-full h-auto drop-shadow-md" />
             </motion.div>
 
-            {/* Animated Play Icon - Vị trí trung tâm dưới */}
+            {/* Animated Play Icon - Bottom center position */}
             <motion.div
               className="absolute min-w-[40px] sm:min-w-[65px] min-[1080px]:min-w-[90px] top-[23%] right-[2%] w-[12%] z-10"
               initial={{ scale: 0, opacity: 0 }}
@@ -134,7 +134,7 @@ const Hero = () => {
                </motion.div>
             </motion.div>
 
-            {/* Animated Location Icon - Vị trí thường thấy ở phía trên bên trái */}
+            {/* Animated Location Icon - Top left position */}
             <motion.div
               className="absolute min-w-[90px] sm:min-w-[70px] min-[1080px]:min-w-[100px] bottom-[37%] right-[4%] w-[10%] z-10"
               initial={{ scale: 0, opacity: 0 }}

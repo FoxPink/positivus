@@ -19,16 +19,16 @@ const Navbar = () => {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement | HTMLDivElement>, href: string) => {
     e.preventDefault();
     
-    // Nếu là link trang (như /about)
+    // If it's a page link (e.g., /about)
     if (href.startsWith('/')) {
       navigate(href);
       setIsOpen(false);
       return;
     }
 
-    // Nếu là anchor link (#...)
+    // If it's an anchor link (#...)
     if (location.pathname !== '/') {
-      // Nếu đang ở trang khác, quay về home rồi mới scroll
+      // If on another page, navigate back home then scroll
       navigate('/' + href);
     } else {
       if (window.lenis) {

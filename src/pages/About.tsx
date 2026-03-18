@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
-import AboutImage from '../assets/about.png';
+import TogetherForSuccessImage from '../assets/TogetherForSuccess.png';
 import HeartIcon from '../assets/Illustration/heart.png';
 import PlayIcon from '../assets/Illustration/play.png';
 import ShareIcon from '../assets/Illustration/share.png';
@@ -63,7 +63,7 @@ const AboutPage = () => {
             </div>
             <div className="flex-1 relative">
               <motion.img 
-                src={AboutImage} 
+                src={TogetherForSuccessImage} 
                 alt="Together for Success" 
                 className="w-full h-auto object-contain"
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -112,35 +112,49 @@ const AboutPage = () => {
           />
           
           <div ref={journeyRef} className="relative mt-20 px-4 md:px-0">
-            {/* Vertical Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-dark/10 hidden md:block" />
+            {/* Vertical Line - Solid with primary accent */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-dark/10 hidden md:block -translate-x-1/2" />
 
-            <div className="space-y-20 md:space-y-32">
+            <div className="space-y-16 md:space-y-24">
               {[
                 { year: '2019', title: 'The Beginning', desc: 'Positivus was founded by a small team of passionate marketers with a vision to revolutionize the digital landscape.' },
                 { year: '2021', title: 'Industry Recognition', desc: 'We received our first major industry award and expanded our team to over 20 experts across multiple disciplines.' },
                 { year: '2023', title: 'Innovation and Growth', desc: 'Launched several proprietary marketing tools and expanded our services to include AI-driven data analytics.' },
                 { year: '2024', title: 'Leading the Future', desc: 'Now a leading agency with global reach, helping hundreds of clients navigate the ever-evolving digital world.' }
               ].map((item, i) => (
-                <div key={i} className={`flex flex-col md:flex-row items-center gap-8 md:gap-0 ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-                  <div className="flex-1 flex justify-center items-center">
-                    <span className="text-4xl md:text-5xl font-bold text-dark/20">{item.year}</span>
+                <div key={i} className={`flex flex-col md:flex-row items-center gap-12 md:gap-0 ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
+                  {/* Year Display */}
+                  <div className={`flex-1 flex ${i % 2 !== 0 ? 'md:justify-start md:pl-20' : 'md:justify-end md:pr-20'} justify-center items-center`}>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={isJourneyInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.5, delay: i * 0.2 }}
+                      className="bg-primary px-8 py-3 rounded-full border border-dark shadow-[4px_4px_0px_#191A23] text-2xl font-bold text-dark"
+                    >
+                      {item.year}
+                    </motion.div>
                   </div>
                   
-                  <div className="hidden md:flex justify-center items-center relative z-10 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-sm" />
+                  {/* Timeline Dot */}
+                  <div className="hidden md:flex justify-center items-center relative z-10 w-8 h-8 rounded-full bg-white border-4 border-dark shadow-sm">
+                    <div className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
+                  </div>
 
+                  {/* Content Card */}
                   <div className="flex-1 w-full">
                     <motion.div 
                       initial={{ opacity: 0, x: i % 2 === 0 ? 50 : -50 }}
                       animate={isJourneyInView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 0.6, delay: i * 0.2 }}
-                      className="bg-dark text-white p-8 md:p-12 rounded-[45px] relative"
+                      className="bg-white border-2 border-dark p-8 md:p-10 rounded-[45px] shadow-[0px_8px_0px_#191A23] hover:translate-y-[-5px] transition-transform duration-300 relative group overflow-hidden"
                     >
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="w-4 h-4 rounded-full bg-primary" />
-                        <h3 className="text-2xl font-medium">{item.title}</h3>
-                      </div>
-                      <p className="text-white/70 leading-relaxed font-space">
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -mr-12 -mt-12 group-hover:bg-primary/10 transition-colors" />
+                      
+                      <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                        <span className="w-2 h-8 bg-primary rounded-full" />
+                        {item.title}
+                      </h3>
+                      <p className="text-dark/80 text-lg leading-relaxed font-space">
                         {item.desc}
                       </p>
                     </motion.div>
