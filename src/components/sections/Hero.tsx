@@ -50,7 +50,7 @@ const Hero = () => {
           className="relative flex justify-center"
         >
           <div className="relative w-full max-w-[800px]">
-            <img src={Illustration} alt="Positivus Illustration" className="w-full h-auto" />
+            <img src={Illustration} alt="Positivus Illustration" className="w-full h-auto" fetchPriority="high" />
             
             {/* Animated Heart Icon - Adjust position to match design */}
             <motion.div
@@ -72,7 +72,7 @@ const Hero = () => {
                 }
               }}
             >
-              <img src={HeartIcon} alt="Floating Heart" className="w-full h-auto drop-shadow-md" />
+              <img src={HeartIcon} alt="Floating Heart" className="w-full h-auto drop-shadow-md" fetchPriority="high" />
             </motion.div>
 
             {/* Animated Share Icon - Adjust position to match design */}
@@ -102,7 +102,7 @@ const Hero = () => {
                 }
               }}
             >
-              <img src={ShareIcon} alt="Floating Share" className="w-full h-auto drop-shadow-md" />
+              <img src={ShareIcon} alt="Floating Share" className="w-full h-auto drop-shadow-md" fetchPriority="high" />
             </motion.div>
 
             {/* Animated Play Icon - Bottom center position */}
@@ -130,7 +130,7 @@ const Hero = () => {
                   delay: 1.7
                 }}
                >
-                  <img src={PlayIcon} alt="Pulse Play" className="w-full h-auto drop-shadow-md cursor-pointer" />
+                  <img src={PlayIcon} alt="Pulse Play" className="w-full h-auto drop-shadow-md cursor-pointer" fetchPriority="high" />
                </motion.div>
             </motion.div>
 
@@ -161,7 +161,7 @@ const Hero = () => {
                 }
               }}
             >
-              <img src={LocationIcon} alt="Floating Location" className="w-full h-auto drop-shadow-md" />
+              <img src={LocationIcon} alt="Floating Location" className="w-full h-auto drop-shadow-md" fetchPriority="high" />
             </motion.div>
           </div>
         </motion.div>
@@ -189,6 +189,7 @@ const Hero = () => {
               src={logo.src} 
               alt={logo.alt} 
               className="h-8 md:h-10 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+              loading="lazy"
             />
           ))}
           {/* Duplicate set for seamless loop */}
@@ -198,6 +199,7 @@ const Hero = () => {
               src={logo.src} 
               alt={logo.alt} 
               className="h-8 md:h-10 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+              loading="lazy"
             />
           ))}
         </motion.div>

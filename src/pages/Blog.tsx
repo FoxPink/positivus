@@ -54,8 +54,8 @@ const BlogPage = () => {
     <div className="pt-[100px] md:pt-[150px] pb-20">
       <section className="bg-white">
         <div className="container">
-          <div className="flex flex-col md:flex-row md:items-center gap-10 mb-20">
-            <h1 className="section-title mb-0">Blog</h1>
+          <div className="flex flex-col gap-10 mb-20 text-center md:text-left">
+            <h1 className="text-5xl md:text-[60px] font-medium leading-tight">Blog</h1>
             <p className="max-w-[580px] font-space font-normal text-[18px] leading-[23px] text-black">
               Insights, news, and expert advice on all things digital marketing to help you grow your business.
             </p>

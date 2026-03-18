@@ -105,7 +105,7 @@ const Services = () => {
               </div>
               <div className="hidden sm:flex items-center justify-center w-[210px] h-[170px]">
                 {service.image ? (
-                  <img src={service.image} alt={service.title.join(' ')} className="max-w-full max-h-full object-contain" />
+                  <img src={service.image} alt={service.title.join(' ')} className="max-w-full max-h-full object-contain" loading="lazy" />
                 ) : (
                   <div className={`w-full h-full rounded-3xl border-4 border-dark/10 flex items-center justify-center ${service.titleColor}`}>
                     <div className="w-16 h-16 bg-dark/5 rounded-full"></div>

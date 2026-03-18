@@ -69,6 +69,7 @@ const AboutPage = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
+                loading="lazy"
               />
             </div>
           </div>
@@ -186,7 +187,7 @@ const AboutPage = () => {
                   {value.desc}
                 </p>
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center p-3">
-                  <img src={value.icon} alt={value.title} className="w-full h-full object-contain" />
+                  <img src={value.icon} alt={value.title} className="w-full h-full object-contain" loading="lazy" />
                 </div>
               </div>
             ))}
@@ -266,7 +267,7 @@ const AboutPage = () => {
               </button>
             </div>
             <div className="w-full md:w-[400px] relative z-10">
-              <img src={CTAIllustration} alt="Join Our Team" className="w-full h-auto" />
+              <img src={CTAIllustration} alt="Join Our Team" className="w-full h-auto" loading="lazy" />
             </div>
             {/* Background decoration */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border-[40px] border-white/10 rounded-full pointer-events-none" />
