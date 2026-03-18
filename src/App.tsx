@@ -11,6 +11,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import NotFound from './pages/NotFound';
 import Lenis from '@studio-freight/lenis';
 import { Analytics } from '@vercel/analytics/react';
+import ScrollToTop from './components/ScrollToTop';
 
 // Declare a global variable for Lenis to be accessed from other components
 declare global {
@@ -72,6 +73,7 @@ function App() {
     <Router>
       <ScrollManager />
       <Analytics />
+      <ScrollToTop />
       <div className="min-h-screen font-space overflow-x-hidden">
         <Navbar />
         <main>
