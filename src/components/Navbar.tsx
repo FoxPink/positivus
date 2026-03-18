@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'About us', href: '/about' },
-    { name: 'Services', href: '#services' },
+    { name: 'Services', href: '/services' },
     { name: 'Use Cases', href: '#cases' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Blog', href: '/blog' },
@@ -49,7 +49,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white z-50">
       <div className="container py-6 flex items-center justify-between">
-        <div className="flex items-center gap-2 cursor-pointer" onClick={(e) => handleScroll(e as any, '/')}>
+        <div className="flex items-center gap-2 cursor-pointer" onClick={(e) => handleScroll(e, '/')}>
           <img src={Logo} alt="Positivus Logo" className="h-6 w-auto" />
         </div>
 

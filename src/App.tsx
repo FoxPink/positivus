@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import AboutPage from './pages/About';
 import PricingPage from './pages/Pricing';
 import BlogPage from './pages/Blog';
+import ServicesPage from './pages/Services';
 import Lenis from '@studio-freight/lenis';
 
 // Declare a global variable for Lenis to be accessed from other components
@@ -75,6 +76,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/services" element={<ServicesPage />} />
           </Routes>
         </main>
         <Footer />

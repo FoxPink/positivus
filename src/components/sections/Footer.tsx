@@ -31,7 +31,7 @@ const Footer = () => {
           <nav className="flex flex-wrap gap-6 md:gap-12">
             {[
               { name: 'About us', href: '/about' },
-              { name: 'Services', href: '#services' },
+              { name: 'Services', href: '/services' },
               { name: 'Use Cases', href: '#cases' },
               { name: 'Pricing', href: '/pricing' },
               { name: 'Blog', href: '/blog' },

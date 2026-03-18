@@ -67,7 +67,9 @@ const pricingPlans = [
   }
 ];
 
-const faqs = [
+type FAQ = { question: string; answer: string };
+
+const faqs: FAQ[] = [
   {
     question: 'Are there any additional fees or charges that may apply?',
     answer: 'At Positivus, we believe in transparent pricing. The monthly fee covers all the digital marketing services listed in your selected plan. There are no hidden charges. However, third-party costs like advertising spend (Google Ads, Meta Ads) are not included in the retainer and will be billed separately by the respective platforms.'
@@ -94,7 +96,7 @@ const faqs = [
   }
 ];
 
-const FAQItem = ({ faq, index, isOpen, onToggle }: { faq: any; index: number; isOpen: boolean; onToggle: () => void }) => {
+const FAQItem = ({ faq, index, isOpen, onToggle }: { faq: FAQ; index: number; isOpen: boolean; onToggle: () => void }) => {
   return (
     <div className={`rounded-[45px] border border-dark shadow-[0px_5px_0px_#191A23] px-8 md:px-[60px] py-8 md:py-[41px] transition-all duration-300 flex flex-col ${isOpen ? 'bg-primary' : 'bg-grey'}`}>
       <div className="flex items-center justify-between cursor-pointer" onClick={onToggle}>

@@ -38,10 +38,10 @@ const Testimonials = () => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     
-    let intervalId: any;
+    let intervalId: number | undefined;
 
     const startInterval = () => {
-      intervalId = setInterval(() => {
+      intervalId = window.setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % testimonials.length);
       }, 7000); // Increased to 7s for more reading time
     };
@@ -50,7 +50,7 @@ const Testimonials = () => {
     
     return () => {
       window.removeEventListener('resize', handleResize);
-      clearInterval(intervalId);
+      if (intervalId !== undefined) window.clearInterval(intervalId);
     };
   }, [currentIndex]); // Re-start interval when index changes to reset timer
 
