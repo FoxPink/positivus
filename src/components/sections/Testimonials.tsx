@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Quote } from 'lucide-react';
 
 const testimonials = [
   {
@@ -113,22 +113,30 @@ const Testimonials = () => {
                       key={index} 
                       style={{ width: `${cardWidth}px` }} 
                       className="flex-shrink-0"
-                      animate={{ opacity: index === currentIndex ? 1 : 0.5 }}
-                      transition={{ duration: 0.4 }}
+                      animate={{ 
+                        opacity: index === currentIndex ? 1 : 0.4,
+                        scale: index === currentIndex ? 1 : 0.95
+                      }}
+                      transition={{ duration: 0.5 }}
                     >
-                      <div className="relative">
-                        <div className="p-6 md:p-[35px_40px] border border-primary rounded-[45px] text-[15px] md:text-[17px] leading-[21px] md:leading-[22px] font-normal relative">
+                      <div className="relative px-2">
+                        {/* Quote Icon Background decoration */}
+                        <div className="absolute -top-6 -left-2 w-12 h-12 bg-primary rounded-2xl flex items-center justify-center shadow-[4px_4px_0px_#191A23] z-20 group-hover:rotate-12 transition-transform duration-300">
+                          <Quote size={24} className="text-dark fill-dark" />
+                        </div>
+                        
+                        {/* The Bubble */}
+                        <div className="p-8 md:p-[45px_50px] border-2 border-primary rounded-[40px] text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] font-normal relative bg-dark/40 backdrop-blur-sm shadow-[10px_10px_0px_rgba(185,255,102,0.05)] z-10">
                           {item.text}
                         </div>
-                        {/* Speech Bubble Arrow */}
-                        <div className="absolute -bottom-[18px] left-[50px] md:left-[60px] w-[30px] h-[30px] overflow-hidden">
-                          <div className="w-[14px] h-[14px] border-r border-b border-primary bg-dark rotate-45 origin-top-left ml-[14px] -mt-[1px]"></div>
-                        </div>
+                        
+                        {/* Speech Bubble Arrow (Tail) - Pixel Perfect Alignment */}
+                        <div className="absolute -bottom-[12px] left-[70px] md:left-[80px] -translate-x-1/2 w-6 h-6 rotate-45 border-r-2 border-b-2 border-primary bg-[#191A23] z-20"></div>
                       </div>
                       
-                      <div className="pl-[60px] md:pl-[80px] mt-8">
-                        <h4 className="text-[17px] md:text-[19px] font-medium text-primary">{item.name}</h4>
-                        <p className="text-[15px] md:text-[17px] text-white font-normal">{item.role}</p>
+                      <div className="pl-[70px] md:pl-[80px] mt-10">
+                        <h4 className="text-[18px] md:text-[20px] font-bold text-primary tracking-wide">{item.name}</h4>
+                        <p className="text-[15px] md:text-[16px] text-white/60 font-space uppercase tracking-widest mt-1">{item.role}</p>
                       </div>
                     </motion.div>
                   ))}
