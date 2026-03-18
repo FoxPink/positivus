@@ -1,7 +1,12 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
-import Team from '../components/sections/Team';
 import AboutImage from '../assets/about.png';
+import HeartIcon from '../assets/Illustration/heart.png';
+import PlayIcon from '../assets/Illustration/play.png';
+import ShareIcon from '../assets/Illustration/share.png';
+import LocationIcon from '../assets/Illustration/location.png';
+import CTAIllustration from '../assets/Illustration/Illustration.png';
+import GreenStar from '../assets/Services/GreenStar.png';
 
 const Counter = ({ value, suffix = "" }: { value: number; suffix?: string }) => {
   const count = useMotionValue(0);
@@ -29,111 +34,228 @@ const Counter = ({ value, suffix = "" }: { value: number; suffix?: string }) => 
   return <span ref={ref}>{displayValue}{suffix}</span>;
 };
 
+const SectionHeading = ({ badge, text }: { badge: string; text: string }) => (
+  <div className="flex flex-col md:flex-row md:items-center gap-10 mb-20">
+    <h2 className="section-title mb-0">{badge}</h2>
+    <p className="max-w-[580px] font-space font-normal text-[18px] leading-[23px] text-black">
+      {text}
+    </p>
+  </div>
+);
+
 const AboutPage = () => {
+  const journeyRef = useRef(null);
+  const isJourneyInView = useInView(journeyRef, { once: true, margin: "-100px" });
+
   return (
-    <div className="pt-[100px] md:pt-[150px]">
-      {/* Hero Section of About Page */}
-      <section className="py-10 md:py-[70px] bg-white">
+    <div className="pt-[100px] md:pt-[150px] pb-20">
+      {/* 1. Hero Section */}
+      <section className="mb-[140px]">
         <div className="container">
-          <div className="flex flex-col md:flex-row md:items-center gap-10 mb-20">
-            <h1 className="section-title mb-0">About Us</h1>
-            <p className="max-w-[580px] font-space font-normal text-[18px] leading-[23px] text-black">
-              We are a team of experienced digital marketers dedicated to helping businesses grow.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="flex flex-col gap-8"
-            >
-              <h2 className="text-4xl md:text-5xl font-medium leading-tight">
-                Our Journey <span className="bg-primary px-2 rounded-md">Since 2026</span>
-              </h2>
-              <p className="text-lg text-dark leading-relaxed">
-                Positivus was founded with a simple goal: to provide small and medium-sized businesses with the same high-quality digital marketing services that large corporations enjoy.
+          <div className="bg-grey rounded-[45px] p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 overflow-hidden">
+            <div className="flex-1 space-y-8">
+              <h1 className="text-5xl md:text-6xl font-medium leading-tight">
+                Together for Success
+              </h1>
+              <p className="text-xl text-dark leading-relaxed max-w-xl">
+                At Positivus, we are committed to providing top-tier digital marketing services that help businesses of all sizes achieve their full potential.
               </p>
-              <p className="text-lg text-dark leading-relaxed">
-                Over the years, we have grown from a small team of three to a full-service agency with experts in every field of digital marketing. Our passion for helping our clients succeed remains at the core of everything we do.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-dark rounded-[45px] p-12 aspect-video flex items-center justify-center relative overflow-hidden"
-            >
-              <div className="relative z-10 text-center flex flex-col items-center">
-                <div className="w-24 h-24 mb-6 flex items-center justify-center">
-                  <img 
-                    src={AboutImage} 
-                    alt="About Us Illustration" 
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
-                <h3 className="text-white text-3xl font-medium mb-4">Excellence in Every Detail</h3>
-                <p className="text-white/70 max-w-sm mx-auto">
-                  We don't just deliver services; we deliver results that transform businesses and lives.
-                </p>
-              </div>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-16 -mt-16"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 border-2 border-primary/20 rounded-full -ml-12 -mb-12"></div>
-            </motion.div>
-          </div>
-
-          {/* Stats Section */}
-          <div className="bg-grey rounded-[45px] p-10 md:p-20 grid grid-cols-2 md:grid-cols-4 gap-10">
-            <div className="text-center">
-              <div className="text-5xl font-bold text-dark mb-2">
-                <Counter value={7} suffix="+" />
-              </div>
-              <div className="text-dark/60">Years Experience</div>
             </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold text-dark mb-2">
-                <Counter value={200} suffix="+" />
-              </div>
-              <div className="text-dark/60">Clients Served</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold text-dark mb-2">
-                <Counter value={15} suffix="+" />
-              </div>
-              <div className="text-dark/60">Expert Members</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold text-dark mb-2">
-                <Counter value={95} suffix="%" />
-              </div>
-              <div className="text-dark/60">Client Retention</div>
+            <div className="flex-1 relative">
+              <motion.img 
+                src={AboutImage} 
+                alt="Together for Success" 
+                className="w-full h-auto object-contain"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Reuse Team Section on About Page */}
-      <Team />
-
-      {/* Values Section */}
-      <section className="py-10 md:py-[70px] bg-white">
-        <div className="container text-center">
-          <h2 className="section-title mb-16">Our Core Values</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+      {/* 2. Impact in Numbers */}
+      <section className="mb-[140px]">
+        <div className="container">
+          <SectionHeading 
+            badge="Our Impact in Numbers" 
+            text="A glimpse into the milestones we've achieved through dedication and strategic excellence."
+          />
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 text-center">
             {[
-              { title: 'Transparency', desc: 'We believe in open and honest communication with our clients at every step.' },
-              { title: 'Innovation', desc: 'We constantly stay ahead of industry trends to provide cutting-edge solutions.' },
-              { title: 'Results-Driven', desc: 'Our success is measured by the growth and ROI we deliver to our clients.' }
-            ].map((value, i) => (
-              <div key={i} className="p-10 border border-dark rounded-[45px] shadow-[0px_5px_0px_#191A23] bg-white hover:bg-primary transition-colors group">
-                <h3 className="text-2xl font-medium mb-4">{value.title}</h3>
-                <p className="text-dark group-hover:text-dark/80 leading-relaxed">
-                  {value.desc}
-                </p>
+              { value: 8, suffix: "+", label: "Years Experience" },
+              { value: 50, suffix: "+", label: "Experts" },
+              { value: 100, suffix: "+", label: "Projects Completed" },
+              { value: 20, suffix: "+", label: "Awards Won" },
+              { value: 500, suffix: "%", label: "ROI for Clients" }
+            ].map((stat, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <div className="text-4xl md:text-5xl font-bold text-dark mb-2">
+                  <Counter value={stat.value} suffix={stat.suffix} />
+                </div>
+                <div className="text-sm md:text-base text-dark/60 font-space whitespace-pre-line">
+                  {stat.label}
+                </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Our Journey (Timeline) */}
+      <section className="mb-[140px]">
+        <div className="container">
+          <SectionHeading 
+            badge="Our Journey" 
+            text="How we started, where we've been, and our vision for the future of digital marketing."
+          />
+          
+          <div ref={journeyRef} className="relative mt-20 px-4 md:px-0">
+            {/* Vertical Line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-dark/10 hidden md:block" />
+
+            <div className="space-y-20 md:space-y-32">
+              {[
+                { year: '2019', title: 'The Beginning', desc: 'Positivus was founded by a small team of passionate marketers with a vision to revolutionize the digital landscape.' },
+                { year: '2021', title: 'Industry Recognition', desc: 'We received our first major industry award and expanded our team to over 20 experts across multiple disciplines.' },
+                { year: '2023', title: 'Innovation and Growth', desc: 'Launched several proprietary marketing tools and expanded our services to include AI-driven data analytics.' },
+                { year: '2024', title: 'Leading the Future', desc: 'Now a leading agency with global reach, helping hundreds of clients navigate the ever-evolving digital world.' }
+              ].map((item, i) => (
+                <div key={i} className={`flex flex-col md:flex-row items-center gap-8 md:gap-0 ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
+                  <div className="flex-1 flex justify-center items-center">
+                    <span className="text-4xl md:text-5xl font-bold text-dark/20">{item.year}</span>
+                  </div>
+                  
+                  <div className="hidden md:flex justify-center items-center relative z-10 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-sm" />
+
+                  <div className="flex-1 w-full">
+                    <motion.div 
+                      initial={{ opacity: 0, x: i % 2 === 0 ? 50 : -50 }}
+                      animate={isJourneyInView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ duration: 0.6, delay: i * 0.2 }}
+                      className="bg-dark text-white p-8 md:p-12 rounded-[45px] relative"
+                    >
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="w-4 h-4 rounded-full bg-primary" />
+                        <h3 className="text-2xl font-medium">{item.title}</h3>
+                      </div>
+                      <p className="text-white/70 leading-relaxed font-space">
+                        {item.desc}
+                      </p>
+                    </motion.div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Core Values */}
+      <section className="mb-[140px]">
+        <div className="container">
+          <SectionHeading 
+            badge="Core Values" 
+            text="The principles that guide our work, our relationships, and our commitment to excellence."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { title: 'Client Success First', icon: HeartIcon, desc: 'Your growth is our primary metric. We align our strategies with your business objectives.' },
+              { title: 'Innovation', icon: PlayIcon, desc: 'We continuously explore new technologies and creative approaches to keep you ahead.' },
+              { title: 'Collaboration', icon: ShareIcon, desc: 'We believe in the power of working together—as a team and as a partner to our clients.' },
+              { title: 'Transparency', icon: LocationIcon, desc: 'Honest communication and clear reporting are at the heart of everything we do.' }
+            ].map((value, i) => (
+              <div key={i} className="p-10 border border-dark rounded-[45px] shadow-[0px_5px_0px_#191A23] bg-white flex flex-col h-full">
+                <h3 className="text-2xl font-medium mb-4">{value.title}</h3>
+                <p className="text-dark leading-relaxed mb-8 flex-grow">
+                  {value.desc}
+                </p>
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center p-3">
+                  <img src={value.icon} alt={value.title} className="w-full h-full object-contain" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Quote Section */}
+      <section className="mb-[140px]">
+        <div className="container">
+          <div className="bg-dark rounded-[45px] p-12 md:p-24 relative overflow-hidden">
+            <div className="relative z-10 max-w-4xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center gap-12">
+              <div className="flex-1 space-y-8">
+                <blockquote className="text-3xl md:text-4xl font-medium text-white leading-tight italic">
+                  "At Positivus, we believe that success is built on innovation, collaboration, and a relentless focus on delivering results."
+                </blockquote>
+                <div className="text-primary text-xl font-medium">— John Smith, Founder of Positivus</div>
+              </div>
+              <div className="w-32 md:w-48 relative">
+                <motion.img
+                  src={GreenStar}
+                  alt="Decoration"
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 15, -15, 0]
+                  }}
+                  transition={{ duration: 5, repeat: Infinity }}
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </div>
+            {/* Background elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32 blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full -ml-24 -mb-24 blur-2xl" />
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Awards Section */}
+      <section className="mb-[140px]">
+        <div className="container">
+          <SectionHeading 
+            badge="Awards & Recognition" 
+            text="Celebrating the milestones and industry accolades that validate our commitment to excellence."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { year: '2023', name: 'Global Marketing Award', org: 'Best Agency' },
+              { year: '2022', name: 'Digital Excellence', org: 'Top Performer' },
+              { year: '2021', name: 'Innovation Hub', org: 'Future Leader' },
+              { year: '2020', name: 'Client Choice', org: 'Highest Rated' }
+            ].map((award, i) => (
+              <div key={i} className="bg-grey rounded-[45px] p-10 flex flex-col items-center text-center hover:bg-primary transition-colors duration-300 cursor-default group">
+                <div className="text-5xl mb-6 opacity-30 group-hover:opacity-100 transition-opacity">🏆</div>
+                <div className="text-sm font-bold text-dark/40 mb-2 uppercase tracking-widest">{award.year}</div>
+                <h3 className="text-xl font-bold text-dark mb-1">{award.name}</h3>
+                <p className="text-dark/60">{award.org}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. CTA Section */}
+      <section className="mb-[140px]">
+        <div className="container">
+          <div className="bg-primary rounded-[45px] p-12 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className="max-w-xl space-y-8 relative z-10">
+              <h2 className="text-4xl md:text-5xl font-medium leading-tight text-dark">
+                Join Our Team
+              </h2>
+              <p className="text-xl text-dark/80 leading-relaxed">
+                Whether you're an experienced professional or a rising star, we're always looking for talent to help us shape the future of digital marketing.
+              </p>
+              <button className="btn-secondary w-full md:w-auto">
+                Explore Careers
+              </button>
+            </div>
+            <div className="w-full md:w-[400px] relative z-10">
+              <img src={CTAIllustration} alt="Join Our Team" className="w-full h-auto" />
+            </div>
+            {/* Background decoration */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border-[40px] border-white/10 rounded-full pointer-events-none" />
           </div>
         </div>
       </section>
@@ -142,3 +264,4 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
+
