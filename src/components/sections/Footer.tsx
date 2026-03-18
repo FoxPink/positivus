@@ -95,7 +95,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-lg opacity-80">
           <div className="flex gap-4">
-            <span>&copy; 2026 Positivus - by FoxPink</span>
+            <span>&copy; 2026 Positivus - by <a href="https://foxpink.netlify.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">FoxPink</a></span>
             <a href="/privacy-policy" onClick={(e) => handleLinkClick(e, '/privacy-policy')} className="underline hover:text-primary transition-colors">Privacy Policy</a>
           </div>
         </div>
