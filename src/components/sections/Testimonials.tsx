@@ -70,7 +70,7 @@ const Testimonials = () => {
     <section id="testimonials" className="py-10 md:py-[70px] bg-white overflow-hidden">
       <div className="container px-4">
         <div className="flex flex-col md:flex-row md:items-center gap-10 mb-20">
-          <h2 className="section-title mb-0">Testimonials</h2>
+          <h2 className="section-title mb-0 h-auto min-h-[51px] flex flex-col items-start justify-center px-[7px]">Testimonials</h2>
           <p className="max-w-[473px] font-space font-normal text-[18px] leading-[23px] text-black">
             Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services
           </p>

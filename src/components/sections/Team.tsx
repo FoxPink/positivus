@@ -52,7 +52,7 @@ const Team = () => {
     <section id="team" className="py-10 md:py-[70px] bg-white">
       <div className="container">
         <div className="flex flex-col md:flex-row md:items-center gap-10 mb-20">
-          <h2 className="section-title mb-0">Team</h2>
+          <h2 className="section-title mb-0 h-auto min-h-[51px] flex flex-col items-start justify-center px-[7px]">Team</h2>
           <p className="w-[473px] h-[46px] font-space font-normal text-[18px] leading-[23px] text-black flex-none order-1 grow-0">
             Meet the skilled and experienced team behind our successful digital marketing strategies
           </p>

@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
+import { Heart, Lightbulb, Users, Eye, Trophy } from 'lucide-react';
 import TogetherForSuccessImage from '../assets/TogetherForSuccess.png';
 import HeartIcon from '../assets/Illustration/heart.png';
 import PlayIcon from '../assets/Illustration/play.png';
@@ -36,7 +37,7 @@ const Counter = ({ value, suffix = "" }: { value: number; suffix?: string }) => 
 
 const SectionHeading = ({ badge, text }: { badge: string; text: string }) => (
   <div className="flex flex-col md:flex-row md:items-center gap-10 mb-20">
-    <h2 className="section-title mb-0">{badge}</h2>
+    <h2 className="section-title mb-0 h-auto min-h-[51px] flex flex-col items-start justify-center px-[7px]">{badge}</h2>
     <p className="max-w-[580px] font-space font-normal text-[18px] leading-[23px] text-black">
       {text}
     </p>
@@ -172,27 +173,47 @@ const AboutPage = () => {
 
       {/* 4. Core Values */}
       <section className="mb-10 md:mb-[140px]">
-        <div className="container">
+        <div className="container px-4 md:px-0">
           <SectionHeading 
             badge="Core Values" 
             text="The principles that guide our work, our relationships, and our commitment to excellence."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: 'Client Success First', icon: HeartIcon, desc: 'Your growth is our primary metric. We align our strategies with your business objectives.' },
-              { title: 'Innovation', icon: PlayIcon, desc: 'We continuously explore new technologies and creative approaches to keep you ahead.' },
-              { title: 'Collaboration', icon: ShareIcon, desc: 'We believe in the power of working together—as a team and as a partner to our clients.' },
-              { title: 'Transparency', icon: LocationIcon, desc: 'Honest communication and clear reporting are at the heart of everything we do.' }
+              { title: 'Client Success First', icon: Heart, desc: 'Your growth is our primary metric. We align our strategies with your business objectives.' },
+              { title: 'Innovation', icon: Lightbulb, desc: 'We continuously explore new technologies and creative approaches to keep you ahead.' },
+              { title: 'Collaboration', icon: Users, desc: 'We believe in the power of working together—as a team and as a partner to our clients.' },
+              { title: 'Transparency', icon: Eye, desc: 'Honest communication and clear reporting are at the heart of everything we do.' }
             ].map((value, i) => (
-              <div key={i} className="p-10 border border-dark rounded-[45px] shadow-[0px_5px_0px_#191A23] bg-white flex flex-col h-full">
-                <h3 className="text-2xl font-medium mb-4">{value.title}</h3>
-                <p className="text-dark leading-relaxed mb-8 flex-grow">
-                  {value.desc}
-                </p>
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center p-3">
-                  <img src={value.icon} alt={value.title} className="w-full h-full object-contain" loading="lazy" />
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ y: -10 }}
+                className="p-10 border-2 border-dark rounded-[45px] shadow-[0px_8px_0px_#191A23] bg-white flex flex-col h-full group hover:bg-primary/5 transition-colors duration-300 relative overflow-hidden"
+              >
+                {/* Decorative background circle */}
+                <div className="absolute -right-8 -top-8 w-24 h-24 bg-primary/10 rounded-full group-hover:scale-150 transition-transform duration-500 pointer-events-none" />
+                
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center p-4 mb-8 shadow-[4px_4px_0px_#191A23] group-hover:rotate-6 transition-transform">
+                    <value.icon size={32} className="text-dark" strokeWidth={2.5} />
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                    {value.title}
+                  </h3>
+                  
+                  <p className="text-dark/80 leading-relaxed font-space text-lg">
+                    {value.desc}
+                  </p>
                 </div>
-              </div>
+
+                {/* Bottom accent bar */}
+                <div className="absolute bottom-0 left-10 right-10 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-t-full" />
+              </motion.div>
             ))}
           </div>
         </div>
@@ -231,24 +252,73 @@ const AboutPage = () => {
 
       {/* 6. Awards Section */}
       <section className="mb-10 md:mb-[140px]">
-        <div className="container">
+        <div className="container px-4 md:px-0">
           <SectionHeading 
             badge="Awards & Recognition" 
             text="Celebrating the milestones and industry accolades that validate our commitment to excellence."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {[
               { year: '2023', name: 'Global Marketing Award', org: 'Best Agency' },
               { year: '2022', name: 'Digital Excellence', org: 'Top Performer' },
               { year: '2021', name: 'Innovation Hub', org: 'Future Leader' },
               { year: '2020', name: 'Client Choice', org: 'Highest Rated' }
             ].map((award, i) => (
-              <div key={i} className="bg-grey rounded-[45px] p-10 flex flex-col items-center text-center hover:bg-primary transition-colors duration-300 cursor-default group">
-                <div className="text-5xl mb-6 opacity-30 group-hover:opacity-100 transition-opacity">🏆</div>
-                <div className="text-sm font-bold text-dark/40 mb-2 uppercase tracking-widest">{award.year}</div>
-                <h3 className="text-xl font-bold text-dark mb-1">{award.name}</h3>
-                <p className="text-dark/60">{award.org}</p>
-              </div>
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                whileHover={{ 
+                  y: -15,
+                  rotate: i % 2 === 0 ? 2 : -2,
+                  transition: { duration: 0.3 }
+                }}
+                className="group relative h-[380px]"
+              >
+                {/* Background Shadow / Card Layer 1 */}
+                <div className="absolute inset-0 bg-dark rounded-[45px] translate-x-3 translate-y-3 group-hover:translate-x-4 group-hover:translate-y-4 group-hover:bg-primary transition-all duration-300" />
+                
+                {/* Main Card / Card Layer 2 */}
+                <div className="absolute inset-0 bg-white border-2 border-dark rounded-[45px] p-10 flex flex-col justify-between overflow-hidden group-hover:bg-dark transition-colors duration-300">
+                  {/* Decorative Glow */}
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 blur-[60px] group-hover:bg-primary/30 transition-all duration-500 rounded-full" />
+                  
+                  <div className="relative z-10 flex flex-col h-full">
+                    {/* Year - Huge and Decorative */}
+                    <div className="absolute -right-4 -top-4 text-7xl font-bold text-dark/5 group-hover:text-white/5 transition-colors pointer-events-none">
+                      {award.year}
+                    </div>
+
+                    <div className="w-20 h-20 bg-primary rounded-3xl flex items-center justify-center mb-auto shadow-[4px_4px_0px_#191A23] group-hover:scale-110 group-hover:-rotate-12 transition-all duration-300">
+                      <Trophy size={40} className="text-dark" strokeWidth={2.5} />
+                    </div>
+                    
+                    <div className="mt-auto">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="w-8 h-1 bg-primary rounded-full group-hover:w-16 transition-all duration-500" />
+                        <span className="text-sm font-bold text-dark/40 uppercase tracking-[0.2em] group-hover:text-primary transition-colors">
+                          {award.year}
+                        </span>
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold text-dark leading-tight mb-3 group-hover:text-white transition-colors">
+                        {award.name}
+                      </h3>
+                      
+                      <p className="text-lg text-dark/60 font-space group-hover:text-white/70 transition-colors">
+                        {award.org}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Corner Accent Decoration */}
+                  <div className="absolute bottom-6 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="w-12 h-12 border-b-4 border-r-4 border-primary rounded-br-xl" />
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
