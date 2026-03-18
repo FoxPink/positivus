@@ -69,7 +69,7 @@ const Services = () => {
     <section id="services" className="py-10 md:py-[70px]">
       <div className="container">
         <div className="flex flex-col md:flex-row items-start gap-[40px] mb-20">
-          <h2 className="section-title mb-0 h-[51px] flex flex-col items-start justify-center px-[7px]">Services</h2>
+          <h2 className="section-title mb-0 h-auto min-h-[51px] flex flex-col items-start justify-center px-[7px]">Services</h2>
           <p className="max-w-[580px] font-normal text-[18px] leading-[23px] text-black">
             At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:
           </p>

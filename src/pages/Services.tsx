@@ -57,7 +57,7 @@ const ServicesPage = () => {
   return (
     <div className="pt-[100px] md:pt-[150px]">
       {/* Hero Section */}
-      <section className="mb-[140px]">
+      <section className="mb-10 md:mb-[140px]">
         <div className="container">
           <div className="bg-grey rounded-[45px] p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 overflow-hidden">
             <div className="flex-1">
@@ -84,7 +84,7 @@ const ServicesPage = () => {
       </section>
 
       {/* SEO Banner Section (Upgraded Style) */}
-      <section className="mb-[140px]">
+      <section className="mb-10 md:mb-[140px]">
         <div className="container">
           <div className="bg-dark rounded-[45px] p-12 md:p-20 relative overflow-hidden group">
             {/* Background Animations */}
@@ -140,10 +140,10 @@ const ServicesPage = () => {
       </section>
 
       {/* How We Work Section */}
-      <section className="mb-[70px]">
+      <section className="mb-10 md:mb-[70px]">
         <div className="container">
           <div className="flex flex-col md:flex-row md:items-center gap-10 mb-20">
-            <h2 className="section-title mb-0 h-[51px] flex flex-col items-start justify-center px-[7px]">
+            <h2 className="section-title mb-0 h-auto min-h-[51px] flex flex-col items-start justify-center px-[7px]">
               How We Work: SEO Process
             </h2>
             <p className="max-w-[580px] font-space font-normal text-[18px] leading-[23px] text-black">
@@ -165,7 +165,7 @@ const ServicesPage = () => {
       <Services />
 
       {/* Bottom CTA Section */}
-      <section className="mt-[70px] mb-[140px]">
+      <section className="mt-10 md:mt-[70px] mb-10 md:mb-[140px]">
         <div className="container">
           <div className="bg-white rounded-[45px] p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 border border-dark shadow-[0px_8px_0px_#191A23] relative overflow-hidden">
             <div className="max-w-xl space-y-8 relative z-10 text-center md:text-left">

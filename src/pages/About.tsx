@@ -50,7 +50,7 @@ const AboutPage = () => {
   return (
     <div className="pt-[100px] md:pt-[150px] pb-0">
       {/* 1. Hero Section */}
-      <section className="mb-[80px] md:mb-[140px]">
+      <section className="mb-10 md:mb-[140px]">
         <div className="container">
           <div className="bg-grey rounded-[45px] p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 overflow-hidden">
             <div className="flex-1 space-y-8">
@@ -77,7 +77,7 @@ const AboutPage = () => {
       </section>
 
       {/* 2. Impact in Numbers */}
-      <section className="mb-[80px] md:mb-[140px]">
+      <section className="mb-10 md:mb-[140px]">
         <div className="container">
           <SectionHeading 
             badge="Our Impact in Numbers" 
@@ -108,7 +108,7 @@ const AboutPage = () => {
       </section>
 
       {/* 3. Our Journey (Timeline) */}
-      <section className="mb-[80px] md:mb-[140px]">
+      <section className="mb-10 md:mb-[140px]">
         <div className="container">
           <SectionHeading 
             badge="Our Journey" 
@@ -171,7 +171,7 @@ const AboutPage = () => {
       </section>
 
       {/* 4. Core Values */}
-      <section className="mb-[80px] md:mb-[140px]">
+      <section className="mb-10 md:mb-[140px]">
         <div className="container">
           <SectionHeading 
             badge="Core Values" 
@@ -199,7 +199,7 @@ const AboutPage = () => {
       </section>
 
       {/* 5. Quote Section */}
-      <section className="mb-[80px] md:mb-[140px]">
+      <section className="mb-10 md:mb-[140px]">
         <div className="container">
           <div className="bg-dark rounded-[45px] p-12 md:p-24 relative overflow-hidden">
             <div className="relative z-10 max-w-4xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center gap-12">
@@ -230,7 +230,7 @@ const AboutPage = () => {
       </section>
 
       {/* 6. Awards Section */}
-      <section className="mb-[80px] md:mb-[140px]">
+      <section className="mb-10 md:mb-[140px]">
         <div className="container">
           <SectionHeading 
             badge="Awards & Recognition" 

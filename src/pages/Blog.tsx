@@ -54,7 +54,7 @@ const BlogPage = () => {
     <div className="pt-[100px] md:pt-[150px] pb-20">
       <section className="bg-white">
         <div className="container">
-          <div className="flex flex-col mb-20 text-center md:text-left">
+          <div className="flex flex-col mb-10 md:mb-20 text-center md:text-left">
             <h1 className="text-5xl md:text-[60px] font-medium leading-tight">Blog</h1>
             <p className="max-w-[580px] font-space font-normal text-[18px] leading-[23px] text-black">
               Insights, news, and expert advice on all things digital marketing to help you grow your business.
@@ -66,7 +66,7 @@ const BlogPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-16 bg-dark rounded-[45px] p-8 md:p-12 flex flex-col lg:flex-row gap-12 items-center overflow-hidden border border-dark shadow-[0px_5px_0px_#191A23]"
+            className="mb-10 md:mb-16 bg-dark rounded-[45px] p-8 md:p-12 flex flex-col lg:flex-row gap-12 items-center overflow-hidden border border-dark shadow-[0px_5px_0px_#191A23]"
           >
             <div className="lg:w-1/2 w-full">
               <img 
@@ -145,20 +145,20 @@ const BlogPage = () => {
           </div>
 
           {/* Pagination */}
-          <div className="mt-16 flex justify-center items-center gap-4">
-            <button className="w-12 h-12 rounded-full border border-dark flex items-center justify-center hover:bg-primary transition-all hover:scale-110 group">
-              <ChevronLeft size={24} className="group-hover:text-dark" />
+          <div className="mt-16 flex justify-center items-center gap-2 md:gap-4 px-4">
+            <button className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-dark flex items-center justify-center hover:bg-primary transition-all hover:scale-110 group flex-shrink-0">
+              <ChevronLeft size={20} className="group-hover:text-dark md:w-6 md:h-6" />
             </button>
-            <div className="flex items-center gap-2">
-              <button className="w-12 h-12 rounded-full border border-dark flex items-center justify-center bg-primary text-dark font-bold shadow-[0px_3px_0px_#191A23]">1</button>
-              <button className="w-12 h-12 rounded-full border border-dark flex items-center justify-center hover:bg-primary transition-colors">2</button>
-              <button className="w-12 h-12 rounded-full border border-dark flex items-center justify-center hover:bg-primary transition-colors">3</button>
-              <span className="px-2 text-dark font-bold text-xl">...</span>
-              <button className="w-12 h-12 rounded-full border border-dark flex items-center justify-center hover:bg-primary transition-colors">9</button>
-              <button className="w-12 h-12 rounded-full border border-dark flex items-center justify-center hover:bg-primary transition-colors">10</button>
+            <div className="flex items-center gap-1 md:gap-2">
+              <button className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-dark flex items-center justify-center bg-primary text-dark font-bold shadow-[0px_3px_0px_#191A23] text-sm md:text-base">1</button>
+              <button className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-dark flex items-center justify-center hover:bg-primary transition-colors text-sm md:text-base">2</button>
+              <button className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-dark flex items-center justify-center hover:bg-primary transition-colors text-sm md:text-base">3</button>
+              <span className="px-1 md:px-2 text-dark font-bold text-lg md:text-xl">...</span>
+              <button className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-dark flex items-center justify-center hover:bg-primary transition-colors text-sm md:text-base">9</button>
+              <button className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-dark flex items-center justify-center hover:bg-primary transition-colors text-sm md:text-base">10</button>
             </div>
-            <button className="w-12 h-12 rounded-full border border-dark flex items-center justify-center hover:bg-primary transition-all hover:scale-110 group">
-              <ChevronRight size={24} className="group-hover:text-dark" />
+            <button className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-dark flex items-center justify-center hover:bg-primary transition-all hover:scale-110 group flex-shrink-0">
+              <ChevronRight size={20} className="group-hover:text-dark md:w-6 md:h-6" />
             </button>
           </div>
         </div>

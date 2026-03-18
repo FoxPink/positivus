@@ -133,7 +133,7 @@ const PricingPage = () => {
 
   return (
     <div className="pt-[100px] md:pt-[150px]">
-      <section className="mb-[140px]">
+      <section className="mb-10 md:mb-[140px]">
         <div className="container">
           <div className="flex flex-col mb-20 text-center md:text-left">
             <h1 className="text-5xl md:text-[60px] font-medium leading-tight">Pricing</h1>
@@ -193,10 +193,10 @@ const PricingPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="mb-[70px]">
+      <section className="mb-10 md:mb-[70px]">
         <div className="container">
           <div className="flex flex-col md:flex-row md:items-center gap-10 mb-20">
-            <h2 className="section-title mb-0 h-[51px] flex flex-col items-start justify-center px-[7px]">
+            <h2 className="section-title mb-0 h-auto min-h-[51px] flex flex-col items-start justify-center px-[7px]">
               Frequently Asked Questions
             </h2>
             <p className="max-w-[292px] font-space font-normal text-[18px] leading-[23px] text-black">
