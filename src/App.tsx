@@ -10,6 +10,7 @@ import ServicesPage from './pages/Services';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import NotFound from './pages/NotFound';
 import Lenis from '@studio-freight/lenis';
+import { Analytics } from '@vercel/analytics/react';
 
 // Declare a global variable for Lenis to be accessed from other components
 declare global {
@@ -70,6 +71,7 @@ function App() {
   return (
     <Router>
       <ScrollManager />
+      <Analytics />
       <div className="min-h-screen font-space overflow-x-hidden">
         <Navbar />
         <main>
