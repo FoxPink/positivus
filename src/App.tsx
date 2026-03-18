@@ -7,6 +7,8 @@ import AboutPage from './pages/About';
 import PricingPage from './pages/Pricing';
 import BlogPage from './pages/Blog';
 import ServicesPage from './pages/Services';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import NotFound from './pages/NotFound';
 import Lenis from '@studio-freight/lenis';
 
 // Declare a global variable for Lenis to be accessed from other components
@@ -77,6 +79,8 @@ function App() {
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

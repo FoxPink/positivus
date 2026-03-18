@@ -96,7 +96,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-lg opacity-80">
           <div className="flex gap-4">
             <span>&copy; 2026 Positivus - by FoxPink</span>
-            <a href="#" className="underline">Privacy Policy</a>
+            <a href="/privacy-policy" onClick={(e) => handleLinkClick(e, '/privacy-policy')} className="underline hover:text-primary transition-colors">Privacy Policy</a>
           </div>
         </div>
       </div>
