@@ -28,8 +28,7 @@ const CTA = () => {
                <motion.img 
                 src={GreenStar} 
                 alt="Green Start Decor" 
-                className="absolute bottom-[-8%] right-[42%] lg:bottom-[-10%] lg:right-[46%] w-[100px] md:w-[130px] lg:w-[160px] h-auto object-contain scale-110 lg:scale-125 z-10"
-                style={{ marginBottom: "-10px", marginRight: "-10px" }}
+                className="absolute min-w-[60px] sm:min-w-[70px] min-[1080px]:min-w-[100px] w-[10%] bottom-[-8%] right-[42%] lg:bottom-[-10%] lg:right-[46%] h-auto object-contain z-10 drop-shadow-md"
                 animate={{ y: [0, -15, 0] }}
                 transition={{ 
                   duration: 3, 
@@ -40,7 +39,7 @@ const CTA = () => {
                <motion.img 
                 src={GrayStar} 
                 alt="Gray Star Decor" 
-                className="absolute bottom-[4%] right-[-8%] lg:bottom-[6%] lg:right-[-12%] w-[140px] md:w-[170px] lg:w-[200px] h-auto object-contain scale-110 lg:scale-125 z-10"
+                className="absolute min-w-[60px] sm:min-w-[70px] min-[1080px]:min-w-[100px] w-[10%] bottom-[4%] right-[-8%] lg:bottom-[6%] lg:right-[-12%] h-auto object-contain z-10 drop-shadow-md"
                 animate={{ rotate: 360 }}
                 transition={{ 
                   duration: 15, 

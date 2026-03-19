@@ -54,7 +54,7 @@ const Hero = () => {
             
             {/* Animated Heart Icon - Adjust position to match design */}
             <motion.div
-              className="absolute min-w-[40px] sm:min-w-[65px] min-[1080px]:min-w-[90px] top-[0%] right-[16%] w-[12%] z-10"
+              className="absolute min-w-[60px] sm:min-w-[70px] min-[1080px]:min-w-[100px] top-[0%] right-[16%] w-[10%] z-10"
               initial={{ scale: 0, opacity: 0 }}
               animate={{ 
                 scale: 1,
@@ -77,7 +77,7 @@ const Hero = () => {
 
             {/* Animated Share Icon - Adjust position to match design */}
             <motion.div
-              className="absolute min-w-[40px] sm:min-w-[65px] min-[1080px]:min-w-[90px] top-[2%] right-[0%] w-[12%] z-10"
+              className="absolute min-w-[60px] sm:min-w-[70px] min-[1080px]:min-w-[100px] top-[2%] right-[0%] w-[10%] z-10"
               initial={{ scale: 0, opacity: 0 }}
               animate={{ 
                 scale: 1,
@@ -107,7 +107,7 @@ const Hero = () => {
 
             {/* Animated Play Icon - Bottom center position */}
             <motion.div
-              className="absolute min-w-[40px] sm:min-w-[65px] min-[1080px]:min-w-[90px] top-[23%] right-[2%] w-[12%] z-10"
+              className="absolute min-w-[60px] sm:min-w-[70px] min-[1080px]:min-w-[100px] top-[23%] right-[2%] w-[10%] z-10"
               initial={{ scale: 0, opacity: 0 }}
               animate={{ 
                 scale: [0, 1.2, 1],

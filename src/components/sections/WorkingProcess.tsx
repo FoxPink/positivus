@@ -68,7 +68,7 @@ const WorkingProcess = () => {
                   <span className="text-4xl md:text-6xl font-medium">{process.number}</span>
                   <h3 className="text-2xl md:text-3xl font-medium">{process.title}</h3>
                 </div>
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-dark flex items-center justify-center bg-grey">
+                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-dark flex items-center justify-center bg-grey flex-shrink-0">
                   {openIndex === index ? <Minus size={32} /> : <Plus size={32} />}
                 </div>
               </div>
